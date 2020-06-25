@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/hex"
 	"flag"
 	"fmt"
 	"log"
@@ -72,7 +73,6 @@ func download(uri string) (file string, data []byte) {
 	return file, data
 }
 
-
 func main() {
 
 	//コマンドライン処理
@@ -98,24 +98,27 @@ func main() {
 		outPathsLen = len(outPaths)
 	}
 
-	//ダウンロード処理
+	//URIsループ
 	for i, uri := range strings.Split(*flagUri, " ") {
 
 		//-oの指定がなければURLからのファイル名を使う
 		var file string
 		var data []byte
 
+		//ダウンロード
 		file, data = download(uri)
 
 		if i != outPathsLen {
 			file = outPaths[i]
 		}
 
+		//ファイル書き込み
 		write(file, data)
 
+		//ハッシュ値
 		if *flagUseDigest == true {
 			d := digest(data, choiceHashFunc(flagDigest))
-			fmt.Println(uri, d)
+			fmt.Println(uri, *flagDigest+":"+hex.EncodeToString(d))
 		}
 
 	}
