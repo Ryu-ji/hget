@@ -1,0 +1,126 @@
+
+/*
+	switch getScheme(uri) {
+
+	default:
+		fmt.Println(fetch.HTTPFetch(uri))
+		break
+
+	case SchemeHTTP:
+		fmt.Println(fetch.HTTPFetch(uri))
+		break
+
+	case SchemeHTTPS:
+		fmt.Println(fetch.HTTPSFetch(uri))
+		break
+
+	}
+*/
+/*defer func() {
+	fmt.Println(uri)
+	fmt.Println(outPaths[i])
+	err := recover()
+	if err != nil {
+		fmt.Println("OKOK")
+	}
+}()
+panic("")
+*/
+
+/*
+func getExt(exts []string) string {
+
+	var ext string
+
+	extsLen := len(exts)
+
+	for i := 0; i < extsLen; i++ {
+
+		if i == extsLen || i == extsLen-1 {
+			continue
+		}
+
+		if i == 0 {
+			ext = exts[i]
+		}
+
+		x := len(ext)
+		y := len(exts[i+1])
+
+		if x < y {
+			ext = exts[i+1]
+		}
+
+	}
+	return ext
+}
+*/
+/*
+func sha256(bytes []byte) {
+
+}
+
+
+
+func sha384(bytes []byte) {
+
+}
+
+func sha3_224(bytes []byte) {
+
+}
+
+func sha3_256(bytes []byte) {
+
+}
+
+func sha3_384(bytes []byte) {
+
+}
+
+func sha3_512(bytes []byte) {
+
+}
+
+func sha512(bytes []byte) {
+
+}
+
+func sha1(bytes []byte) []byte {
+}
+
+func md4(bytes []byte) {
+
+}
+
+func md5(bytes []byte) {
+
+}*/
+package main
+
+import "fmt"
+
+func main() {
+	l := []string{"file1", "file2", "file3"}
+
+	for i := 0; i < 4; i++ {
+
+		if len(l) == i {
+			fmt.Println("true")
+		} else {
+			fmt.Println("f")
+		}
+	}
+}
+		//ハッシュ値計算
+		/*
+			if *flagUseDigest == true {
+				fmt.Println(true)
+				switch *flagDigest {
+				case "sha1":
+
+					break
+
+				}
+
+			}*/
